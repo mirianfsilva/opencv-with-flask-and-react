@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import { Grid, Container } from '@material-ui/core';
 import PropTypes from 'prop-types';
+import { Grid, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { withStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -32,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TeamMembers(props){
     const classes = useStyles();
-    const { post } = props;
 
     return(
         <div className={classes.root}>

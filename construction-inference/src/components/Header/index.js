@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Button, CssBaseline, Typography, Container } from '@material-ui/core';
+import { AppBar, Toolbar, Button, Typography, Container } from '@material-ui/core';
 import { List, ListItem, ListItemText } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 

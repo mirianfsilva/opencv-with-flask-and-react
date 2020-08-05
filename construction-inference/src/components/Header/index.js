@@ -52,8 +52,8 @@ export default function Menu(props) {
                     </Typography>
                     <List variant="inherit" align="center" color="initial" className={classes.menuButton} justify="center">
                         <ListItem variant="inherit" align="center" color="initial" className={classes.menuList}>
-                            <ListItemLink primary={"HOME"} to="/" />
-                            <ListItemLink primary="TEAM" to="/" />
+                            <ListItemLink primary="HOME" to="/" />
+                            <ListItemLink primary="TEAM" to="/teamMembers" />
                         </ListItem>
                     </List>
                     <Button style={{ backgroundColor: '#47688e' }} color="inherit" href="/profile">My Profile</Button>

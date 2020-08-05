@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Button, CssBaseline, Typography, Container } from '@material-ui/core';
 import { List, ListItem, ListItemText } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
-import './style.scss';
 
 function ListItemLink(props) {
     const { primary, to } = props;
@@ -53,12 +52,11 @@ export default function Menu(props) {
                     </Typography>
                     <List variant="inherit" align="center" color="initial" className={classes.menuButton} justify="center">
                         <ListItem variant="inherit" align="center" color="initial" className={classes.menuList}>
-                            <ListItemLink primary="HOME" to="/" />
-                            <ListItemLink primary="ABOUT" to="/About" />
-                            <ListItemLink primary="CONTACT" to="/"/>
+                            <ListItemLink primary={"HOME"} to="/" />
+                            <ListItemLink primary="TEAM" to="/" />
                         </ListItem>
                     </List>
-                    <Button style={{ backgroundColor: '#1167b1' }} color="inherit" href="/login">Login</Button>
+                    <Button style={{ backgroundColor: '#47688e' }} color="inherit" href="/profile">My Profile</Button>
                 </Toolbar>
             </AppBar>
             <Toolbar />

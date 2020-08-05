@@ -71,22 +71,22 @@ export default function Profile(props) {
             <Container maxWidth="md">
                 <Grid container spacing={1}>
                     <Grid item xs={6}>
-                        <Typography style={{ color: '#42443e' }} align="right" component="h2" variant="inherit"
+                        <Typography style={{ color: '#42443e' }} align="center" component="h2" variant="inherit"
                             color="initial" paragraph>
                             David Tenente
                         </Typography>
                         <Typography style={{ fontSize: '20px' }} variant="inherit" align="left" color="initial" paragraph>
                             <i><b></b></i>
                         </Typography>
-                        <Typography variant="inherit" align="right" color="initial" paragraph>
+                        <Typography variant="inherit" align="center" color="initial" paragraph>
                             “If a building looks better under construction than when it is finished, then it is a failure."
                         </Typography>
                         <Divider />
                         <List variant="inherit" align="left" >
                             <ListItemText primary="DEMOGRAPHICS"/>
-                            <ListItemText primary="Age: 50"/>
-                            <ListItemText primary="Location: Boston, Massachusetts Education: Material Science"/>
-                            <ListItemText primary="Job: Construction Project Manager Family: Wife and three kids"/>
+                            <ListItemText primary="Age" secondary="50"/>
+                            <ListItemText primary="Location" secondary="Boston, Massachusetts Education: Material Science"/>
+                            <ListItemText primary="Job" secondary="Construction Project Manager Family: Wife and three kids"/>
                             <Divider />
                             <ListItemText primary="GOALS" />
                             <ListItemText primary="Keep construction on time" /> 

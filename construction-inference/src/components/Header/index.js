@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     menuButton: {
         marginRight: theme.spacing(2),
         marginLeft: theme.spacing(2),
-        color: "#536f4f",
+        color: "#03254c",
     },
     menuList: {
         marginRight: theme.spacing(2),
@@ -49,7 +49,7 @@ export default function Menu(props) {
             <AppBar position="fixed">
                 <Toolbar position="fixed" style={{ backgroundColor: '#fff' }}>
                     <Typography variant="h6" className={classes.title}>
-                        <a href="/"><img className="Logo" src={Logo} alt="foodloop"/></a>
+                        {/* <a href="/"><img className="Logo" src={Logo} alt="foodloop"/></a> */}
                     </Typography>
                     <List variant="inherit" align="center" color="initial" className={classes.menuButton} justify="center">
                         <ListItem variant="inherit" align="center" color="initial" className={classes.menuList}>
@@ -58,7 +58,7 @@ export default function Menu(props) {
                             <ListItemLink primary="CONTACT" to="/"/>
                         </ListItem>
                     </List>
-                    <Button style={{ backgroundColor: '#749370' }} color="inherit" href="/login">Login</Button>
+                    <Button style={{ backgroundColor: '#1167b1' }} color="inherit" href="/login">Login</Button>
                 </Toolbar>
             </AppBar>
             <Toolbar />

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Divider, List, ListItem, Button, Typography, Grid, Card, CardActionArea, CardContent, CardMedia, Hidden, ListItemText } from '@material-ui/core/';
 import { withStyles } from '@material-ui/core/styles';
-import bg from './../../assets/img/construction.jpg';
+import bg from './../../assets/img/bg.png';
 import profilePicture from './../../assets/img/profile-photo.jpg';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,10 +15,10 @@ const useStyles = makeStyles((theme) => ({
     },
     heroContent: {
         margin: 50,
-        height: 400,
+        height: 500,
         backgroundColor: theme.palette.background.paper,
         padding: theme.spacing(12, 12, 12, 12),
-        // backgroundImage: `url(${bg})`,
+        backgroundImage: `url(${bg})`,
         backgroundRepeat: 'round',
     },
     cardGrid: {
@@ -97,6 +97,9 @@ export default function Profile(props) {
                     <Grid item xs={6}>
                         <CardMedia className={classes.cardMedia} image={profilePicture} />
                     </Grid>
+                    <Hidden xsDown>
+                        <CardMedia className={classes.cardMediaBg} image={bg} />
+                    </Hidden>
                 </Grid>
             </Container>
         </div>

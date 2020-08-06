@@ -13,11 +13,9 @@ function ListItemLink(props) {
     );
 
     return (
-        <li>
-            <ListItem button component={renderLink}>
-                <ListItemText primary={primary} />
-            </ListItem>
-        </li>
+        <ListItem button component={renderLink}>
+            <ListItemText primary={primary} />
+        </ListItem>
     );
 }
 

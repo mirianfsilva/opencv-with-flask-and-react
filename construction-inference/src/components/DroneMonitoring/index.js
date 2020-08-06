@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { AppBar, CssBaseline, Hidden } from '@material-ui/core/';
 import { Divider, Container, Drawer, Grid, Paper, Avatar } from '@material-ui/core/';
-import { List, ListItemText, ListItem, Typography } from '@material-ui/core/';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { List, ListItemText, ListItem, Typography, Button, Popover } from '@material-ui/core/';
+import { makeStyles, WithStyles, useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,13 +33,24 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const message = `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`;
-
-
 function DroneMonitoring(props) {
     const { window } = props;
     const classes = useStyles();
     const theme = useTheme();
+    
+    const [state, setState] = useState([]);
+
+    useEffect(() => {
+        loadData();
+    }, []);
+
+    const loadData = async () => {
+        const response = await fetch('https://5f2b1b226ae5cc0016423455.mockapi.io/api/opencv/footage');
+        const data = await response.json();
+        setState(data);
+    }
+
+    console.log(state);
 
     const drawer = (
         <div>
@@ -64,73 +75,58 @@ function DroneMonitoring(props) {
                         <Paper className={classes.paper}>
                             <Grid container wrap="nowrap" spacing={2}>
                                 <Grid item xs>
-                                    <Typography>{message}</Typography>
+                                    <Typography>allala</Typography>
                                 </Grid>
                             </Grid>
                         </Paper>
                         <Paper className={classes.paper}>
                             <Grid container wrap="nowrap" spacing={2}>
                                 <Grid item>
-                                    <Avatar>W</Avatar>
+                                    <Avatar></Avatar>
                                 </Grid>
                                 <Grid item>
-                                    <Avatar>W</Avatar>
+                                    <Avatar></Avatar>
                                 </Grid>
                                 <Grid item>
-                                    <Avatar>W</Avatar>
+                                    <Avatar></Avatar>
                                 </Grid>
                                 <Grid item>
-                                    <Avatar>W</Avatar>
+                                    <Avatar></Avatar>
                                 </Grid><Grid item>
-                                    <Avatar>W</Avatar>
+                                    <Avatar></Avatar>
                                 </Grid>
                             </Grid>
                         </Paper>
-                        <Paper className={classes.paper}>
-                            <Grid container wrap="nowrap" spacing={2}>
-                                <Grid item>
-                                    <Avatar>W</Avatar>
-                                </Grid>
-                                <Grid item xs>
-                                    <Typography>{message}</Typography>
-                                </Grid>
+                        {state.map(item => (
+                            <Grid item xs={12}>
+                                <Paper className={classes.paper} onClick={ () => 
+                                    <Popover anchorReference="anchorPosition" anchorPosition={{ top: 200, left: 1200 }}
+                                    anchorOrigin={{ vertical: 'center', horizontal: 'right', }}
+                                    transformOrigin={{ vertical: 'center', horizontal: 'center', }}>
+                                    </Popover>
+                                }>
+                                    <Grid container wrap="nowrap" spacing={2}>
+                                        <Grid item xs>
+                                            <Avatar src={item.avatar} />
+                                        </Grid>
+                                        <Grid item xs>
+                                            <Typography>
+                                                {item.defects}
+                                                {item.subtitle}
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item xs>
+                                            <Typography>{item.risk}</Typography>
+                                        </Grid>
+                                    </Grid>
+                                </Paper>
                             </Grid>
-                        </Paper>
-                        <Paper className={classes.paper}>
-                            <Grid container wrap="nowrap" spacing={2}>
-                                <Grid item>
-                                    <Avatar>W</Avatar>
-                                </Grid>
-                                <Grid item xs>
-                                    <Typography>{message}</Typography>
-                                </Grid>
-                            </Grid>
-                        </Paper>
-                        <Paper className={classes.paper}>
-                            <Grid container wrap="nowrap" spacing={2}>
-                                <Grid item>
-                                    <Avatar>W</Avatar>
-                                </Grid>
-                                <Grid item xs>
-                                    <Typography>{message}</Typography>
-                                </Grid>
-                            </Grid>
-                        </Paper>
-                        <Paper className={classes.paper}>
-                            <Grid container wrap="nowrap" spacing={2}>
-                                <Grid item>
-                                    <Avatar>W</Avatar>
-                                </Grid>
-                                <Grid item xs>
-                                    <Typography>{message}</Typography>
-                                </Grid>
-                            </Grid>
-                        </Paper>
+                        ))}
                     </Grid>
 
                     <Grid item xs={9}>
                         <Paper className={classes.paper}>footage here</Paper>
-                    </Grid>                
+                    </Grid>
                 </Grid>
             </Container>
         </div>

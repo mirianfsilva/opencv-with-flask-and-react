@@ -16,10 +16,10 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     heroContent: {
-        margin: 50,
+        margin: 30,
         height: 600,
         backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(12, 12, 12, 12),
+        padding: theme.spacing(6, 0, 6, 0),
         backgroundRepeat: 'round',
     },
     content: {
@@ -58,9 +58,9 @@ function DroneMonitoring(props) {
 
     return (
         <div className={classes.heroContent} style={{ backgroundColor: '#47688e' }}>
-            <Container maxWidth="md">
+            <Container maxWidth="lg">
                 <Grid container spacing={1}>
-                    <Grid item xs={4}>
+                    <Grid item xs={3}>
                         <Paper className={classes.paper}>
                             <Grid container wrap="nowrap" spacing={2}>
                                 <Grid item xs>
@@ -128,7 +128,7 @@ function DroneMonitoring(props) {
                         </Paper>
                     </Grid>
 
-                    <Grid item xs={8}>
+                    <Grid item xs={9}>
                         <Paper className={classes.paper}>footage here</Paper>
                     </Grid>                
                 </Grid>

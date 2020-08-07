@@ -16,4 +16,11 @@ Through the menu/navbar, it is possible for the user in the application to be ab
 - All data used in this solution, are responses from the endpoints made available on the server.
 - To stream a footage to this web application, a python generating function was implemented, which consists of transmitting sequences of video frames for a Motion jpeg stream. 
 
-### To run a development
+## How to run the project?
+
+After cloned repo, to run frontend application: 
+```
+$ cd frontend
+npm install
+npm start
+```

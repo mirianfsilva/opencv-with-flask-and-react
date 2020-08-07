@@ -1,4 +1,4 @@
-# frontend-openCV
+# frontend-app using flask web server
 
 About this frontend project:
 - This frontend was implemented using react with javascript.
@@ -18,9 +18,16 @@ Through the menu/navbar, it is possible for the user in the application to be ab
 
 ## How to run the project?
 
-After cloned repo, to run frontend application: 
+In this development version, the server and the frontend must be started together, but on different ports and so the frontend can be served.
+
+After cloned repo, to **run frontend** application: 
 ```
 $ cd frontend
 npm install
 npm start
+```
+For the backend flask web serve, it'r required run the following command. It will install the packages according to the configuration file `requirements.txt`.
+```
+$ pip install -r requirements.txt
+python server/server.py
 ```

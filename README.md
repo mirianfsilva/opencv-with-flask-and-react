@@ -1,4 +1,4 @@
-# frontend-app using flask web server
+## Frontend Application using OpenCV with flask server
 
 About this frontend project:
 - This frontend was implemented using react with javascript.
@@ -29,5 +29,5 @@ npm start
 For the backend flask web serve, it'r required run the following command. It will install the packages according to the configuration file `requirements.txt`.
 ```
 $ pip install -r requirements.txt
-python server/server.py
 ```
+To **run web server** `python server/server.py`
